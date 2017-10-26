@@ -18,11 +18,16 @@ flag=0;
 			flag=1;
 			if(index=-1)
 				memory.push_back(temp);
+			stringstream nospace;
 			if(matrix.find("+")!=-1)
 			{
+				
 				string Variable1= matrix.substr(0,matrix.find('+')) ;
 				string variable2= matrix.substr(matrix.find('+'),(matrix.length()-matrix.find('+'))-1);
-
+                                nospace<<variable1;
+				nospace>>variable1;
+				nospace<<variable2;
+				nospace>>variable2;
                 int index1=memory_check(variable1);
 				int index2=memory_check(variable2);
 
@@ -33,8 +38,12 @@ else
 }
 			else if(matrix.find("-")!=-1)
 			{
-				string Variable1= matrix.substr(0,matrix.find('-')) ;
+				string variable1= matrix.substr(0,matrix.find('-')) ;
 				string variable2= matrix.substr(matrix.find('-'),(matrix.length()-matrix.find('-'))-1);
+				nospace<<variable1;
+				nospace>>variable1;
+				nospace<<variable2;
+				nospace>>variable2;
 				int index1=memory_check(variable1);
 				int index2=memory_check(variable2);
 
@@ -47,7 +56,11 @@ else
 			{
 				string Variable1= matrix.substr(0,matrix.find('*')) ;
 				string variable2= matrix.substr(matrix.find('*'),(matrix.length()-matrix.find('*'))-1);
-                int index1=memory_check(variable1);
+                                nospace<<variable1;
+				nospace>>variable1;
+				nospace<<variable2;
+				nospace>>variable2;
+				int index1=memory_check(variable1);
 				int index2=memory_check(variable2);
 
 if(index!=-1)
@@ -60,7 +73,10 @@ else
 			{
 				string Variable1= matrix.substr(0,matrix.find('/')) ;
 				string variable2= matrix.substr(matrix.find('/'),(matrix.length()-matrix.find('/'))-1);
-
+                                nospace<<variable1;
+				nospace>>variable1;
+				nospace<<variable2;
+				nospace>>variable2;
 int index1=memory_check(variable1);
 int index2=memory_check(variable2);
 
@@ -71,8 +87,10 @@ else
 }
 			else if(matrix.find("^")!=-1)
 			{
-				string Variable1= matrix.substr(0,matrix.find('^')) ;
-	
+				string variable1= matrix.substr(0,matrix.find('^')) ;
+	                        nospace<<variable1;
+				nospace>>variable1;
+				
 int index1=memory_check(variable1);
 				
 
